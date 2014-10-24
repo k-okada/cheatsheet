@@ -130,14 +130,19 @@ If you like to know git command itself, please see
 
 \vspace{3mm}
 2. Install \href{https://github.com/github/hub}{hub} command.
+
+
 \begin{tabbing}
-hu\=b uses \href{http://golang.org/doc/install}{Go development
+Ub\=untu 14.04 or newer users use \href{http://golang.org/doc/install}{Go development
   environment} to install.\\
 \> \texttt{\$ sudo apt-get install golang git-core}\\
 \> \texttt{\$ git clone https://github.com/github/hub.git}\\
 \> \texttt{\$ cd hub}\\
 \> \texttt{\$ ./script/build}\\
 \> \texttt{\$ sudo cp hub /usr/local/bin}\\
+Ub\=untu 12.04 users use rubygem to install.\\
+\> \texttt{\$ sudo apt-get install rubygems git-core}\\
+\> \texttt{\$ sudo gem install hub}\\
 \end{tabbing}
 
 3. Configure user information for your local environment.
@@ -186,9 +191,9 @@ If you added new file, add to repository.\\
 Check the current status.\\
 \> \texttt{\$ git status}\\ 
 Revert the file.\\
-\> \texttt{\$ git checkout [file]}\\ 
+\> \texttt{\$ git checkout -- [file]}\\ 
 Delete all un-commited files.\\
-\> \texttt{\$ git clean -fd}\\ 
+\> \texttt{\$ git clean -xfd}\\ 
 Delete everything you worked. CAUTION this remove all of
 you change, even if you commited.\\
 \> \texttt{\$ git reset --hard origin/master}\\ 
