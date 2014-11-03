@@ -158,6 +158,7 @@ every time.\\
 
 \end{tabbing}
 
+\vspace{-2.5mm}
 \section{Fork the Project}
 \vspace{2.5mm}
 
@@ -176,6 +177,7 @@ Fork the project.\\
 Type \texttt{hub remote -v} to confirm what was happened.\\
 \end{tabbing}
 
+\vspace{-2.5mm}
 \section{Add New Features, Fix Bugs}
 \vspace{2.5mm}
 
@@ -212,6 +214,7 @@ If you wan to confirm on browser.\\
 \> \texttt{\$ hub browse -- pulls}\\  
 \end{tabbing}
 
+\vspace{-2.5mm}
 \section{If You Get Lost}
 
 \vspace{2.5mm}
@@ -230,11 +233,12 @@ If \=you do not know what you are doing.\\
 \> \texttt{\$ git stash}\\
 \> \texttt{\$ git checkout master}\\
 \> \texttt{\$ git fetch --all}\\
-\> \texttt{\$ git reset --hard origin master}\\  
+\> \texttt{\$ git reset --hard origin master}\\
+Then you can create new branch and add new features/bugs.
 \end{tabbing}
 
 \begin{tabbing}
-If \=you w\=ant to delete unnecessary branches\\
+If \=you w\=ant to delete unnecessary branches.\\
 \> \texttt{\$ git fetch --all}\\
 \> \texttt{\$ git checkout master}\\
 \> \texttt{\$ git pull origin master}\\
@@ -244,10 +248,13 @@ If \=you w\=ant to delete unnecessary branches\\
 \end{tabbing}
 
 \begin{tabbing}
-If \=someone ask you to `please rebase your commit` or `please merge master`\\
+If \=so\=meone ask you to `please rebase your commit` or `please merge master`\\
 \> \texttt{\$ git checkout new\_features}\\  
 \> \texttt{\$ git fetch --all}\\
 \> \texttt{\$ git rebase origin/master}\\
+If it can not automatically merge, fix conflicts, add file and continue rebasing\\
+\>\> \texttt{\$ git add [file]}\\
+\>\> \texttt{\$ git rebase --continue}\\
 \> \texttt{\$ git push YOUR\_USER new\_features}\\  
 \end{tabbing}
 
