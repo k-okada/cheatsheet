@@ -115,8 +115,8 @@
 
 The purpose of this cheat sheet is to encourage people to start your
 project from forking other's repository, not to write
-a YET-ANOTHER-ROBOTICS-PACKAGE from scratch.
-
+a YET-ANOTHER-ROBOTICS-PACKAGE from scratch, and ends with sending pull-request.
+%
 If you like to know git command itself, please see
 \href{https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf}{GIT
   CHEAT SHEET} from \texttt{training.github.com/kit}.
@@ -125,44 +125,46 @@ If you like to know git command itself, please see
 \section{Configure User Information}
 \vspace{2.5mm}
 
-1. Create \href{http://github.com}{github} account from
-\href{https://github.com/join}{https://github.com/join}.
-
-\vspace{3mm}
-2. Install \href{https://github.com/github/hub}{hub} command.
-
-
 \begin{tabbing}
-Ub\=untu 14.04 or newer users use \href{http://golang.org/doc/install}{Go development
-  environment} to install.\\
-\> \texttt{\$ sudo apt-get install golang git-core}\\
-\> \texttt{\$ git clone https://github.com/github/hub.git}\\
-\> \texttt{\$ cd hub}\\
-\> \texttt{\$ ./script/build}\\
-\> \texttt{\$ sudo cp hub /usr/local/bin}\\
-Ub\=untu 12.04 users use rubygem to install.\\
-\> \texttt{\$ sudo apt-get install rubygems git-core}\\
-\> \texttt{\$ sudo gem install hub}\\
-\end{tabbing}
+1. \= Cre\=ate \href{http://github.com}{github} account from
+\href{https://github.com/join}{https://github.com/join}.\\
+\\
+2. Install \href{https://github.com/github/hub}{hub} command.\\
+\\
+\> Ubuntu 14.04 or higher user can use \href{http://golang.org/doc/install}{Go development
+  environment} to install hub.\\
+\>\> \texttt{\$ sudo apt-get install golang git-core}\\
+\>\> \texttt{\$ git clone https://github.com/github/hub.git}\\
+\>\> \texttt{\$ cd hub \&\&./script/build}\\
+\>\> \texttt{\$ sudo cp hub /usr/local/bin}\\
+\\
+\> Ubuntu 12.04 or higher user can use rubygem to to install hub.\\
+\>\> \texttt{\$ sudo apt-get install rubygems}\\
+\>\> \texttt{\$ sudo gem install hub}\\
+\\
 
-3. Configure user information for your local environment.
+3. Configure user information for your local environment.\\
+\\
+\> Sets the name you want to attached to your commit transactions.\\
+\>\> \texttt{\$ git config --global user.name "[name]"}\\
+\>Sets the email you want to attached to your commit transactions.\\
+\>\> \texttt{\$ git config --global user.email "[email address]"}\\
+\>Let git to keep a password cashed in memory instead of asking you
 
-\begin{tabbing}
-Se\=ts the name you want to attached to your commit transactions.\\
-\> \texttt{\$ git config --global user.name "[name]"}\\  
-Sets the email you want to attached to your commit transactions.\\
-\> \texttt{\$ git config --global user.email "[email address]"}\\  
-Let git to keep a password cashed in memory instead of asking users
 every time.\\
-\> \texttt{\$ git config --global credential.helper "cache --timeout=3600"}\\  
+\>\> \texttt{\$ git config --global credential.helper "cache --timeout=3600"}\\
+\>Use less to handle long lines.\\
+\>\> \texttt{\$ git config --global core.pager 'less -r'}\\
+
 \end{tabbing}
 
-\section{Start Your Project}
+\vspace{-2.5mm}
+\section{Fork the Project}
 \vspace{2.5mm}
 
 Find any of related project, search
 \href{http://www.google.com}{google}, look for
-\href{http://wiki.ros.org/}{roswiki}, ask
+\href{http://wiki.ros.org/}{roswiki}(wiki.ros.org), ask
 \href{http://answers.ros.org/questions/}{answers.ros.org}. 
 In this cheat sheet, we'll start our project from \href{http://github.com/ros/cheatsheet}{http://github.com/ros/cheatsheet}.
 
@@ -170,10 +172,12 @@ In this cheat sheet, we'll start our project from \href{http://github.com/ros/ch
 Cl\=one the project.\\
 \> \texttt{\$ hub clone ros/cheatsheet}\\  
 Fork the project.\\
+\> \texttt{\$ cd cheatsheet}\\ 
 \> \texttt{\$ hub fork}\\ 
 Type \texttt{hub remote -v} to confirm what was happened.\\
 \end{tabbing}
 
+\vspace{-2.5mm}
 \section{Add New Features, Fix Bugs}
 \vspace{2.5mm}
 
@@ -183,24 +187,17 @@ right (From The Cathedral and the Bazaar)''.
 
 \begin{tabbing}
 Cr\=eate branch for your work.\\
-\> \texttt{\$ git branch -b new\_features}\\  
+\> \texttt{\$ git checkout -b new\_features}\\
 Write code, check diffs.\\
-\> \texttt{\$ git diff}\\ 
-If you added new file, add to repository.\\
-\> \texttt{\$ git add [file]}\\ 
+\> \texttt{\$ git diff [--color-words]}\\
+If you added new file, add them to repository.\\
+\> \texttt{\$ git add [file]}\\
 Check the current status.\\
-\> \texttt{\$ git status}\\ 
-Revert the file.\\
-\> \texttt{\$ git checkout -- [file]}\\ 
-Delete all un-commited files.\\
-\> \texttt{\$ git clean -xfd}\\ 
-Delete everything you worked. CAUTION this remove all of
-you change, even if you commited.\\
-\> \texttt{\$ git reset --hard origin/master}\\ 
+\> \texttt{\$ git status}\\
+Commit the changes with descriptable message, no fix/update/hoge/fuga.\\
+\> \texttt{\$ git commit -m "descriptable messages"}\\
 List version history\\
-\> \texttt{\$ git log}\\ 
-Commit the changes, do not write fix/update/hoge/fuga/ in messages.\\
-\> \texttt{\$ git commit -m "descriptable messages"}
+\> \texttt{\$ git log [--graph | --decorate | --oneline]}\\
 \end{tabbing}
 
 \section{Send Pull Request}
@@ -217,18 +214,31 @@ If you wan to confirm on browser.\\
 \> \texttt{\$ hub browse -- pulls}\\  
 \end{tabbing}
 
+\vspace{-2.5mm}
 \section{If You Get Lost}
+
 \vspace{2.5mm}
+\begin{tabbing}
+Re\=vert the file. CAUTION this will erase all changes.\\
+\> \texttt{\$ git checkout -- [file]}\\
+Delete all un-commited files.\\
+\> \texttt{\$ git clean -fxd}\\
+Delete everything you worked. CAUTION this remove all of
+you change, even if you commited.\\
+\> \texttt{\$ git reset --hard origin/master}\\
+\end{tabbing}
+
 \begin{tabbing}
 If \=you do not know what you are doing.\\
 \> \texttt{\$ git stash}\\
 \> \texttt{\$ git checkout master}\\
 \> \texttt{\$ git fetch --all}\\
-\> \texttt{\$ git reset --hard origin master}\\  
+\> \texttt{\$ git reset --hard origin master}\\
+Then you can create new branch and add new features/bugs.
 \end{tabbing}
 
 \begin{tabbing}
-If \=you w\=ant to delete unnecessary branches\\
+If \=you w\=ant to delete unnecessary branches.\\
 \> \texttt{\$ git fetch --all}\\
 \> \texttt{\$ git checkout master}\\
 \> \texttt{\$ git pull origin master}\\
@@ -238,10 +248,13 @@ If \=you w\=ant to delete unnecessary branches\\
 \end{tabbing}
 
 \begin{tabbing}
-If \=someone ask you to `please rebase your commit` or `please merge master`\\
+If \=so\=meone ask you to `please rebase your commit` or `please merge master`\\
 \> \texttt{\$ git checkout new\_features}\\  
 \> \texttt{\$ git fetch --all}\\
 \> \texttt{\$ git rebase origin/master}\\
+If it can not automatically merge, fix conflicts, add file and continue rebasing\\
+\>\> \texttt{\$ git add [file]}\\
+\>\> \texttt{\$ git rebase --continue}\\
 \> \texttt{\$ git push YOUR\_USER new\_features}\\  
 \end{tabbing}
 
@@ -266,8 +279,10 @@ Copyright \copyright\ 2014 Kei Okada
 \newpage
 
 \begin{center}
-paste a ``Re-Inventing the Wheel'' comic from
-http://www.willowgarage.com/sites/default/files/blog/201004/willow\_p1\_02s.jpg
+``Re-Inventing the Wheel'', Ph.D Comic from
+http://www.willowgarage.com/sites/default/files/blog/201004/willow\_p1\_02s.jpg,
+Copyright \copyright\ 2010 Jorge Cham.
+\includegraphics[angle=90,width=.95\columnwidth]{willow_p1_02s.jpg}
 \end{center}
 
 \end{document}
