@@ -9,8 +9,10 @@ GIT_CHEAT_NAME = GITcheatsheet
 
 PDF_FILES = $(subst dia,pdf,$(shell ls images/*.dia))
 
-all: $(PDF_FILES) $(ROS_CHEAT_NAME).pdf $(GIT_CHEAT_NAME).pdf
+all: images/willow_p1_02s.jpg $(PDF_FILES) $(ROS_CHEAT_NAME).pdf $(GIT_CHEAT_NAME).pdf
 
+images/willow_p1_02s.jpg:
+	wget http://www.willowgarage.com/sites/default/files/blog/201004/willow_p1_02s.jpg -O images/willow_p1_02s.jpg
 
 %.pdf: %.tex $(PNG_FILES)
 	$(LATEX) $< && $(LATEX) $< && $(LATEX) $<
