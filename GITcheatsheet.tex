@@ -240,7 +240,7 @@ If \=you w\=ant to delete unnecessary branches.\\
 \> \texttt{\$ git pull origin master}\\
 \> \texttt{\$ git branch -r --merged |  grep YOUR\_USER |  grep -v '>' |  grep -v master |  xargs -L1}\\
 \>\> \texttt{|  cut -d"/" -f2- |xargs -n1 git push --delete YOUR\_USER}\\
-\> \texttt{\$git branch --merged | grep -v "\textbackslash *" | xargs -n 1 git branch -d}\\
+\> \texttt{\$ git branch --merged | grep -v "\textbackslash *" | xargs -n 1 git branch -d}\\
 \end{tabbing}
 
 \begin{tabbing}
@@ -249,8 +249,8 @@ If \=so\=meone ask you to `please rebase your commit` or `please merge master`\\
 \> \texttt{\$ git fetch --all}\\
 \> \texttt{\$ git rebase origin/master}\\
 If it can not automatically merge, fix conflicts, add file and continue rebasing\\
-\>\> \texttt{\$ git add [file]}\\
-\>\> \texttt{\$ git rebase --continue}\\
+\> \texttt{\$ git add [file]}\\
+\> \texttt{\$ git rebase --continue}\\
 \> \texttt{\$ git push YOUR\_USER new\_features}\\  
 \end{tabbing}
 
