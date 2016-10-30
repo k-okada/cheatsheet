@@ -130,14 +130,14 @@ If you like to know git command itself, please see
 \href{https://github.com/join}{https://github.com/join}.\\
 \\
 2. Install \href{https://github.com/github/hub}{hub} command.\\
-\> Ubuntu 14.04 or higher user can use \href{http://golang.org/doc/install}{Go development
-  environment} to install hub.\\
-\>\> \texttt{\$ sudo apt-get install golang git-core}\\
-\>\> \texttt{\$ git clone https://github.com/github/hub.git}\\
-\>\> \texttt{\$ cd hub \&\&./script/build}\\
-\>\> \texttt{\$ sudo cp hub /usr/local/bin}\\
-\> Ubuntu 12.04 or higher user can use rubygem to to install hub.\\
-\>\> \texttt{\$ sudo apt-get install rubygems}\\
+%% \> Ubuntu 14.04 or higher user can use \href{http://golang.org/doc/install}{Go development
+%%   environment} to install hub.\\
+%% \>\> \texttt{\$ sudo apt-get install golang git-core}\\
+%% \>\> \texttt{\$ git clone https://github.com/github/hub.git}\\
+%% \>\> \texttt{\$ cd hub \&\&./script/build}\\
+%% \>\> \texttt{\$ sudo cp hub /usr/local/bin}\\
+%% \> Ubuntu 12.04 or higher user can use rubygem to to install hub.\\
+\>\> \texttt{\$ sudo apt-get install ruby}\\
 \>\> \texttt{\$ sudo gem install hub}\\
 \\
 3. Configure user information for your local environment.\\
@@ -151,6 +151,8 @@ every time.\\
 \>\> \texttt{\$ git config --global credential.helper "cache --timeout=3600"}\\
 \>Use less to handle long lines.\\
 \>\> \texttt{\$ git config --global core.pager 'less -r'}\\
+\>Use https protocol instead of ssh for hub remote command.\\
+\>\> \texttt{\$ git config --global hub.protocol https}\\
 
 \end{tabbing}
 
